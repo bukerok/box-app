@@ -1,0 +1,5 @@
+.volume-info {
+    display: flex;
+    gap: 8px;
+    color: var(--secondary-text);
+}

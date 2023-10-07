@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { ItemsListComponent } from './pages/items-list/items-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+    ItemsListComponent,
     StoreModule.forRoot({}, {})
   ],
   providers: [],
