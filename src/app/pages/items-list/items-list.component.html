@@ -1,12 +1,15 @@
 <app-toolbar />
-<ul>
-    <li *ngFor="let item of items">
-        <app-container-item
-            *ngIf="item.isContainer; else elseBlock"
-            [item]="item"
-        />
-        <ng-template #elseBlock >
-            <app-thing-item [item]="item"/>
-        </ng-template>
-    </li>
-</ul>
+<section>
+    <ul>
+        <li *ngFor="let item of items">
+            <app-container-item
+                *ngIf="item.isContainer; else elseBlock"
+                [item]="item"
+            />
+            <ng-template #elseBlock >
+                <app-thing-item [item]="item"/>
+            </ng-template>
+        </li>
+    </ul>
+    <app-add-item-button />
+</section>

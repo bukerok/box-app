@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 import { ToolbarComponent } from 'src/app/shared/toolbar/toolbar.component';
 
+import { AddItemButtonComponent } from './components/add-item-button/add-item-button.component';
 import { ThingItemComponent } from './components/thing-item/thing-item.component';
 import { ContainerItemComponent } from './components/container-item/container-item.component';
 import { Item } from './interfaces/item';
@@ -15,6 +16,7 @@ import { Item } from './interfaces/item';
     ToolbarComponent,
     ThingItemComponent,
     ContainerItemComponent,
+    AddItemButtonComponent,
   ],
   standalone: true,
   templateUrl: './items-list.component.html',
