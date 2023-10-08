@@ -1,0 +1,46 @@
+<form
+    [formGroup]="newItem"
+    (ngSubmit)="createItem()"
+>
+    <div
+        mat-dialog-title
+        class="header"
+    >
+        <h2 class="header__text">Add a thing</h2>
+        <button
+            mat-icon-button
+            aria-label="close dialog"
+            mat-dialog-close
+        >
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-dialog-content class="content">
+            <mat-form-field>
+                <mat-label>Description: </mat-label>
+                <input
+                    matInput
+                    formControlName="description"
+                >
+            </mat-form-field>
+            <mat-checkbox formControlName="isContainer">
+                is a container
+            </mat-checkbox>
+            <mat-form-field>
+                <mat-label>Volume: </mat-label>
+                <input
+                    matInput
+                    formControlName="volume"
+                    type="number"
+                >
+            </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button
+            mat-button
+            type="submit"
+        >
+            Add
+        </button>
+    </mat-dialog-actions>
+</form>
