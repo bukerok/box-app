@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { ItemsListComponent } from './pages/items-list/items-list.component';
+import { itemsReducer } from './pages/items-list/state/items.reducer';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,12 @@ import { ItemsListComponent } from './pages/items-list/items-list.component';
   imports: [
     BrowserModule,
     ItemsListComponent,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot(
+      {
+        items: itemsReducer,
+      },
+      {},
+    ),
   ],
   providers: [
     provideAnimations(),

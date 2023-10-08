@@ -1,7 +1,7 @@
 <app-toolbar />
 <section>
     <ul>
-        <li *ngFor="let item of items">
+        <li *ngFor="let item of (items$ | async)">
             <app-container-item
                 *ngIf="item.isContainer; else elseBlock"
                 [item]="item"

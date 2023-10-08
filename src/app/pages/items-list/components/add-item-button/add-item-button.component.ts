@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 
-import { Item } from '../../interfaces/item';
+import { createItem } from '../../state/items.actions';
 import { AddItemDialogComponent } from '../add-item-dialog/add-item-dialog.component';
 
 @Component({
@@ -18,7 +19,10 @@ import { AddItemDialogComponent } from '../add-item-dialog/add-item-dialog.compo
   ],
 })
 export class AddItemButtonComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private store: Store,
+  ) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(AddItemDialogComponent, {
@@ -31,7 +35,9 @@ export class AddItemButtonComponent {
           return;
         }
 
-        console.log('Data: ', data);
+        this.store.dispatch(createItem({
+          item: data,
+        }));
       });
   }
 }
