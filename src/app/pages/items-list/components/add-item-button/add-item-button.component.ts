@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 

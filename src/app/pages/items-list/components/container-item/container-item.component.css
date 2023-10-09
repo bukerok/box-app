@@ -1,3 +1,9 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .volume-info {
     display: flex;
     gap: 8px;

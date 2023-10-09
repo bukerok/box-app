@@ -1,11 +1,16 @@
 <mat-card>
-    <mat-card-content>
-        <p>
-            📦 {{item.description}}
-        </p>
-        <div class="volume-info">
-            <span class="mat-caption">Total volume: {{item.volume}}</span>
-            <span class="mat-caption">Volume left: {{item.volume}}</span>
+    <mat-card-content class="content">
+        <div>
+            <p>
+                📦 {{item.description}}
+            </p>
+            <div class="volume-info">
+                <span class="mat-caption">Total volume: {{item.volume}}</span>
+                <span class="mat-caption">Volume left: {{item.volume}}</span>
+            </div>
+        </div>
+        <div>
+            <app-delete-item-button [item]="item" />
         </div>
     </mat-card-content>
 </mat-card>
