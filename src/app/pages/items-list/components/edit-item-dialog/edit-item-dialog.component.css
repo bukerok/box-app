@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 16px;
+}
+
+.header__text {
+    flex-grow: 2;
+    margin: 0;
+}
+
+.control {
+    width: 100%;
+}

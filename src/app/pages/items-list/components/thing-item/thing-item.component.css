@@ -4,6 +4,11 @@
     align-items: flex-start;
 }
 
+.controls-panel {
+    display: flex;
+    gap: 8px;
+}
+
 .volume-info {
     margin-bottom: 0;
     color: var(--secondary-text);
