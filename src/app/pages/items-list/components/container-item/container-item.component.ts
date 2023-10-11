@@ -1,7 +1,11 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { Store } from '@ngrx/store';
+import { of } from 'rxjs';
 
-import { Item } from '../../interfaces/item';
+import { Container } from '../../interfaces/item';
+import { selectFreeVolume } from '../../state/items.selectors';
 import { DeleteItemButtonComponent } from '../delete-item-button/delete-item-button.component';
 import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.component';
 
@@ -10,6 +14,7 @@ import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.co
   templateUrl: './container-item.component.html',
   styleUrls: ['./container-item.component.css'],
   imports: [
+    AsyncPipe,
     MatCardModule,
     EditItemButtonComponent,
     DeleteItemButtonComponent,
@@ -17,5 +22,15 @@ import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.co
   standalone: true,
 })
 export class ContainerItemComponent {
-  @Input({ required: true }) item!: Item;
+  @Input({ required: true }) container!: Container;
+
+  get freeVolume() {
+    if (!this.container) {
+      return of(0);
+    }
+
+    return this.store.select(selectFreeVolume(this.container.volume, this.container.nestedItemIds!));
+  }
+
+  constructor(private store: Store) {}
 }

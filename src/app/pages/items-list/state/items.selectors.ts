@@ -1,18 +1,35 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import { Item } from '../interfaces/item';
+import { Item, isContainer } from '../interfaces/item';
 
-export const selectItems = createSelector(
-  createFeatureSelector<ReadonlyArray<Item>>('items'),
+export const selectFeature = createFeatureSelector<Item[]>('items');
+
+export const selectSortedItems = createSelector(
+  selectFeature,
   (items) => {
     return [...items].sort((a, b) => {
-      if (a.isContainer && !b.isContainer) {
+      if (isContainer(a) && !isContainer(b)) {
         return -1;
-      } else if (!a.isContainer && b.isContainer) {
+      } else if (!isContainer(a) && isContainer(b)) {
         return 1;
       }
 
       return a.description.localeCompare(b.description);
     });
+  },
+);
+
+export const selectFreeVolume = (totalVolume: number, ids: string[]) => createSelector(
+  selectFeature,
+  (items) => {
+    const idsSet = new Set(ids);
+
+    return items.reduce((acc, curr) => {
+      if (idsSet.has(curr.id)) {
+        return acc - curr.volume;
+      }
+
+      return acc;
+    }, totalVolume);
   },
 );

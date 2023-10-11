@@ -3,11 +3,11 @@
     <ul>
         <li *ngFor="let item of (items$ | async)">
             <app-container-item
-                *ngIf="item.isContainer; else elseBlock"
-                [item]="item"
+                *ngIf="isContainer(item); else elseBlock"
+                [container]="item"
             />
             <ng-template #elseBlock >
-                <app-thing-item [item]="item"/>
+                <app-thing-item [thing]="item"/>
             </ng-template>
         </li>
     </ul>

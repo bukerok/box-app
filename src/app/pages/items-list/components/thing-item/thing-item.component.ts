@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
-import { Item } from '../../interfaces/item';
+import { Thing } from '../../interfaces/item';
 import { DeleteItemButtonComponent } from '../delete-item-button/delete-item-button.component';
 import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.component';
 
@@ -17,5 +17,5 @@ import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.co
   standalone: true,
 })
 export class ThingItemComponent {
-  @Input({ required: true }) item!: Item;
+  @Input({ required: true }) thing!: Thing;
 }

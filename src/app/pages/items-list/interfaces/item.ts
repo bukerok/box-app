@@ -1,6 +1,15 @@
-export interface Item {
+export interface Thing {
     id: string;
     description: string;
     volume: number;
-    isContainer?: boolean;
+}
+
+export type Container = Thing & {
+    nestedItemIds: string[];
+};
+
+export type Item = Thing | Container;
+
+export function isContainer(item: Item): item is Container {
+    return 'nestedItemIds' in item;
 }

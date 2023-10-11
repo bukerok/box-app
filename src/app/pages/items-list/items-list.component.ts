@@ -7,7 +7,8 @@ import { ToolbarComponent } from 'src/app/shared/toolbar/toolbar.component';
 import { AddItemButtonComponent } from './components/add-item-button/add-item-button.component';
 import { ThingItemComponent } from './components/thing-item/thing-item.component';
 import { ContainerItemComponent } from './components/container-item/container-item.component';
-import { selectItems } from './state/items.selectors';
+import { selectSortedItems } from './state/items.selectors';
+import { isContainer } from './interfaces/item';
 
 @Component({
   selector: 'app-items-list',
@@ -25,7 +26,8 @@ import { selectItems } from './state/items.selectors';
   styleUrls: ['./items-list.component.css'],
 })
 export class ItemsListComponent {
-  items$ = this.store.select(selectItems);
+  items$ = this.store.select(selectSortedItems);
+  isContainer = isContainer;
 
   constructor(private store: Store) {}
 }

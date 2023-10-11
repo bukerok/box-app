@@ -17,12 +17,18 @@ export const initialState: Item[] = [
     id: '5',
     description: 'container test',
     volume: 200,
-    isContainer: true,
+    nestedItemIds: ["1", "22"],
   },
   {
     id: '10',
     description: 'other test 1',
     volume: 13,
+  },
+  {
+    id: "22",
+    description: "Another container",
+    volume: 55,
+    nestedItemIds: [],
   },
 ];
 

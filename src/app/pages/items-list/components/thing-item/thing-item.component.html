@@ -2,13 +2,13 @@
     <mat-card-content class="content">
         <div>
             <p>
-                {{item.description}}
+                {{thing.description}}
             </p>
-            <p class="mat-caption volume-info">Volume: {{item.volume}}</p>
+            <p class="mat-caption volume-info">Volume: {{thing.volume}}</p>
         </div>
         <div class="controls-panel">
-            <app-edit-item-button [item]="item" />
-            <app-delete-item-button [item]="item" />
+            <app-edit-item-button [item]="thing" />
+            <app-delete-item-button [item]="thing" />
         </div>
     </mat-card-content>
 </mat-card>
