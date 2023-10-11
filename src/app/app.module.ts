@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
+import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { AppComponent } from './app.component';
 import { ItemsListComponent } from './pages/items-list/items-list.component';
 import { itemsReducer } from './pages/items-list/state/items.reducer';
+
+function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({
+    keys: ['items'],
+    rehydrate: true,
+  })(reducer);
+}
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
   declarations: [
@@ -18,7 +27,9 @@ import { itemsReducer } from './pages/items-list/state/items.reducer';
       {
         items: itemsReducer,
       },
-      {},
+      {
+        metaReducers,
+      },
     ),
   ],
   providers: [
