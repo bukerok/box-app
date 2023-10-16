@@ -29,7 +29,7 @@ export class ContainerItemComponent {
       return of(0);
     }
 
-    return this.store.select(selectFreeVolume(this.container.volume, this.container.nestedItemIds!));
+    return this.store.select(selectFreeVolume(this.container));
   }
 
   constructor(private store: Store) {}

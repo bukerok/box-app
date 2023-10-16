@@ -1,14 +1,12 @@
-<mat-card>
-    <mat-card-content class="content">
-        <div>
-            <p>
-                {{thing.description}}
-            </p>
-            <p class="mat-caption volume-info">Volume: {{thing.volume}}</p>
-        </div>
-        <div class="controls-panel">
-            <app-edit-item-button [item]="thing" />
-            <app-delete-item-button [item]="thing" />
-        </div>
-    </mat-card-content>
-</mat-card>
+<mat-card-content class="content">
+    <div class="content__info">
+        <p>
+            {{thing.description}}
+        </p>
+        <p class="mat-caption volume-info">Volume: {{thing.volume}}</p>
+    </div>
+    <div class="controls-panel">
+        <app-edit-item-button [item]="thing" />
+        <app-delete-item-button [item]="thing" />
+    </div>
+</mat-card-content>

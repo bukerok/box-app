@@ -2,14 +2,19 @@ export interface Thing {
     id: string;
     description: string;
     volume: number;
+    parentId?: string;
 }
 
 export type Container = Thing & {
-    nestedItemIds: string[];
+    isContainer: boolean;
 };
 
 export type Item = Thing | Container;
 
 export function isContainer(item: Item): item is Container {
-    return 'nestedItemIds' in item;
+    return (item as Container).isContainer;
+}
+
+export type ItemNode = Thing & {
+    children: ItemNode[];
 }

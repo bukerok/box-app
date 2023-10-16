@@ -1,17 +1,15 @@
-<mat-card>
-    <mat-card-content class="content">
-        <div>
-            <p>
-                📦 {{container.description}}
-            </p>
-            <div class="volume-info">
-                <span class="mat-caption">Total volume: {{container.volume}}</span>
-                <span class="mat-caption">Volume left: {{freeVolume | async}}</span>
-            </div>
+<mat-card-content class="content">
+    <div class="content__info">
+        <p>
+            📦 {{container.description}}
+        </p>
+        <div class="volume-info">
+            <span class="mat-caption">Total volume: {{container.volume}}</span>
+            <span class="mat-caption">Volume left: {{freeVolume | async}}</span>
         </div>
-        <div class="controls-panel">
-            <app-edit-item-button [item]="container" />
-            <app-delete-item-button [item]="container" />
-        </div>
-    </mat-card-content>
-</mat-card>
+    </div>
+    <div class="controls-panel">
+        <app-edit-item-button [item]="container" />
+        <app-delete-item-button [item]="container" />
+    </div>
+</mat-card-content>

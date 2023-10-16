@@ -7,17 +7,19 @@ export const initialState: Item[] = [
     id: '1',
     description: 'test 1',
     volume: 22,
+    parentId: '5',
   },
   {
     id: '2',
     description: 'test second',
     volume: 2,
+    parentId: "5",
   },
   {
     id: '5',
     description: 'container test',
     volume: 200,
-    nestedItemIds: ["1", "22"],
+    isContainer: true,
   },
   {
     id: '10',
@@ -28,7 +30,8 @@ export const initialState: Item[] = [
     id: "22",
     description: "Another container",
     volume: 55,
-    nestedItemIds: [],
+    isContainer: true,
+    parentId: "5",
   },
 ];
 
