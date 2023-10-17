@@ -34,6 +34,10 @@ export class MoveItemButtonComponent {
 
     dialogRef.afterClosed()
       .subscribe((parentId?: string) => {
+        if (parentId === undefined) {
+          return;
+        }
+
         this.store.dispatch(updateItem({
           item: {
             ...this.item,
