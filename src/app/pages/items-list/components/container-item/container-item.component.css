@@ -9,12 +9,17 @@
 }
 
 .content__info {
-    padding: 8px;
+    padding: 16px;
+
+    & > p {
+        margin-bottom: 0;
+    }
 }
 
 .controls-panel {
     display: flex;
     gap: 8px;
+    padding-right: 16px;
 }
 
 .volume-info {
