@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { Thing } from '../../interfaces/item';
 import { DeleteItemButtonComponent } from '../delete-item-button/delete-item-button.component';
 import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.component';
+import { MoveItemButtonComponent } from '../move-item-button/move-item-button.component';
 
 @Component({
   selector: 'app-thing-item',
@@ -11,6 +12,7 @@ import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.co
   styleUrls: ['./thing-item.component.css'],
   imports: [
     MatCardModule,
+    MoveItemButtonComponent,
     EditItemButtonComponent,
     DeleteItemButtonComponent,
   ],

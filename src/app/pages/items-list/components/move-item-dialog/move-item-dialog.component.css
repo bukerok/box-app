@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.option-item {
+    border: none;
+    padding: 8px;
+    text-align: left;
+    background-color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+
+    &:hover {
+        background-color: #eee;
+    }
+
+    &:first-of-type {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    &:last-of-type {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+
+        border-bottom: none;
+    }
+}

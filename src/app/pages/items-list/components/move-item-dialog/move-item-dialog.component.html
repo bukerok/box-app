@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Moving "{{item.description}}"</h2>
+<mat-dialog-content>
+    <ul class="options-list">
+        <button
+            class="option-item"
+            [mat-dialog-close]
+        >
+            No container
+        </button>
+        <button
+            *ngFor="let container of (availableContainers$ | async)"
+            class="option-item"
+            [mat-dialog-close]="container.id"
+        >
+            📦 {{container.description}}
+        </button>
+    </ul>
+</mat-dialog-content>

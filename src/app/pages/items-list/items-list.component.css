@@ -8,21 +8,14 @@
     border-radius: 8px;
 }
 
-.tree .mat-tree-node,
-.tree .mat-nested-tree-node {
-    border-bottom: 1px solid #ccc;
-
-    &:last-of-type {
-        border-bottom: none;
-    }
+.mat-nested-tree-node div[role=group] {
+    margin-left: 40px;
+    border-left: 1px solid #ccc;
+    border-bottom: none;
 }
 
-.tree div[role=group] {
-    border-bottom: 1px solid #ccc;
-
-    & > .mat-tree-node {
-        padding-left: 40px;
-    }
+.tree div[role=group] > .mat-tree-node {
+    padding-left: 40px;
 }
 
 .invisible {

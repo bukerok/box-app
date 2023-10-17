@@ -6,6 +6,7 @@
         <p class="mat-caption volume-info">Volume: {{thing.volume}}</p>
     </div>
     <div class="controls-panel">
+        <app-move-item-button [item]="thing" />
         <app-edit-item-button [item]="thing" />
         <app-delete-item-button [item]="thing" />
     </div>

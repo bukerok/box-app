@@ -8,6 +8,7 @@ import { Container } from '../../interfaces/item';
 import { selectFreeVolume } from '../../state/items.selectors';
 import { DeleteItemButtonComponent } from '../delete-item-button/delete-item-button.component';
 import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.component';
+import { MoveItemButtonComponent } from '../move-item-button/move-item-button.component';
 
 @Component({
   selector: 'app-container-item',
@@ -16,6 +17,7 @@ import { EditItemButtonComponent } from '../edit-item-button/edit-item-button.co
   imports: [
     AsyncPipe,
     MatCardModule,
+    MoveItemButtonComponent,
     EditItemButtonComponent,
     DeleteItemButtonComponent,
   ],
