@@ -4,9 +4,10 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
-import { AppComponent } from './app.component';
-import { ItemsListComponent } from './pages/items-list/items-list.component';
 import { itemsReducer } from './pages/items-list/state/items.reducer';
+import { ToolbarComponent } from './shared/toolbar/toolbar.component';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -22,7 +23,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
   ],
   imports: [
     BrowserModule,
-    ItemsListComponent,
+    ToolbarComponent,
+    AppRoutingModule,
     StoreModule.forRoot(
       {
         items: itemsReducer,

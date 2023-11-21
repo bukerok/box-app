@@ -1,3 +1,10 @@
-<mat-toolbar>
-    Where is the thing?
+<mat-toolbar class="toolbar">
+    <a
+        class="title-link"
+        routerLink="/"
+    >
+        Where is the thing?
+    </a>
+
+    <button type="button" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
 </mat-toolbar>
